@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-27T23:32:42.208Z",
+  "participant": {
+    "name": "f",
+    "rollNumber": "f"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 79,
+    "hits": 0,
+    "misses": 6,
+    "falseAlarms": 0,
+    "correctRejections": 22,
+    "avgReactionTime": 2000,
+    "avgCorrectHitOrRejectionReactionTime": 2000
+  },
+  "__sourceFile": ""
+}
