@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-03-03T01:43:51.080Z",
+  "participant": {
+    "name": "tfhgxc ngxcmhg",
+    "rollNumber": "44566775676"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 0,
+    "hits": 0,
+    "misses": 1,
+    "falseAlarms": 0,
+    "correctRejections": 0,
+    "avgReactionTime": 2000,
+    "avgCorrectHitOrRejectionReactionTime": 0
+  },
+  "__sourceFile": ""
+}

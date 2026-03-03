@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-03-02T21:52:49.954Z",
+  "participant": {
+    "name": "dsf",
+    "rollNumber": "dffgd"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 61,
+    "hits": 0,
+    "misses": 11,
+    "falseAlarms": 0,
+    "correctRejections": 17,
+    "avgReactionTime": 1269,
+    "avgCorrectHitOrRejectionReactionTime": 1451
+  },
+  "__sourceFile": ""
+}

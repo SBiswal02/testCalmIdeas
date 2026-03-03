@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-03-03T01:49:15.673Z",
+  "participant": {
+    "name": "new",
+    "rollNumber": "578"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 79,
+    "hits": 0,
+    "misses": 6,
+    "falseAlarms": 0,
+    "correctRejections": 22,
+    "reactionTime": 2000,
+    "numTrialsCompleted": 30,
+    "avgCorrectHitOrRejectionReactionTime": 2000
+  },
+  "__sourceFile": ""
+}

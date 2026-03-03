@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-03-03T00:40:49.422Z",
+  "participant": {
+    "name": "ghc",
+    "rollNumber": "7"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 100,
+    "hits": 0,
+    "misses": 0,
+    "falseAlarms": 0,
+    "correctRejections": 6,
+    "avgReactionTime": 2000,
+    "avgCorrectHitOrRejectionReactionTime": 2000
+  },
+  "__sourceFile": ""
+}

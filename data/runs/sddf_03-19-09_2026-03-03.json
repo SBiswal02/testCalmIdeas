@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-03-02T21:49:09.430Z",
+  "participant": {
+    "name": "sddf",
+    "rollNumber": "sdfdfs"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 0,
+    "hits": 0,
+    "misses": 0,
+    "falseAlarms": 0,
+    "correctRejections": 0,
+    "avgReactionTime": 0,
+    "avgCorrectHitOrRejectionReactionTime": 0
+  },
+  "__sourceFile": ""
+}

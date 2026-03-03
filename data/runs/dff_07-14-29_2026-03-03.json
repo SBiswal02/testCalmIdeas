@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-03-03T01:44:29.713Z",
+  "participant": {
+    "name": "dff",
+    "rollNumber": "43"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 0,
+    "hits": 0,
+    "misses": 0,
+    "falseAlarms": 0,
+    "correctRejections": 0,
+    "reactionTime": 0,
+    "numTrialsCompleted": 2,
+    "avgCorrectHitOrRejectionReactionTime": 0
+  },
+  "__sourceFile": ""
+}

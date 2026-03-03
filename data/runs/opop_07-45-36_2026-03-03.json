@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-03T02:15:36.809Z",
+  "participant": {
+    "name": "opop",
+    "rollNumber": "81"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 100,
+    "hits": 0,
+    "misses": 0,
+    "falseAlarms": 0,
+    "correctRejections": 1,
+    "reactionTime": 2000,
+    "numTrialsCompleted": 3,
+    "avgCorrectHitOrRejectionReactionTime": 2000,
+    "distractionPopupCount": 2
+  },
+  "__sourceFile": ""
+}

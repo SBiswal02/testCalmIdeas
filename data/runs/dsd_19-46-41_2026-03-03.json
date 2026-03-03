@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-03T14:16:41.521Z",
+  "participant": {
+    "name": "dsd",
+    "rollNumber": "4556456"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 58,
+    "hits": 0,
+    "misses": 5,
+    "falseAlarms": 0,
+    "correctRejections": 7,
+    "reactionTime": 2000,
+    "numTrialsCompleted": 14,
+    "avgCorrectHitOrRejectionReactionTime": 2000,
+    "distractionPopupCount": ""
+  },
+  "__sourceFile": ""
+}

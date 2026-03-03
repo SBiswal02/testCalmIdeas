@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-03-03T01:57:26.370Z",
+  "participant": {
+    "name": "564ghjcv",
+    "rollNumber": "5678"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 80,
+    "hits": 0,
+    "misses": 4,
+    "falseAlarms": 0,
+    "correctRejections": 16,
+    "reactionTime": 2000,
+    "numTrialsCompleted": 22,
+    "avgCorrectHitOrRejectionReactionTime": 2000
+  },
+  "__sourceFile": ""
+}

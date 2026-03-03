@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-03T02:00:04.440Z",
+  "participant": {
+    "name": "hello",
+    "rollNumber": "55657"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 30,
+    "stimulusType": "letters",
+    "stimulusDuration": 2000
+  },
+  "results": {
+    "accuracy": 86,
+    "hits": 5,
+    "misses": 2,
+    "falseAlarms": 2,
+    "correctRejections": 19,
+    "reactionTime": 1573,
+    "numTrialsCompleted": 30,
+    "avgCorrectHitOrRejectionReactionTime": 1582,
+    "distractionPopupCount": 3
+  },
+  "__sourceFile": ""
+}
