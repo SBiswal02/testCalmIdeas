@@ -5,10 +5,12 @@ import ResultsScreen from "./components/ResultsScreen";
 import SettingsScreen from "./components/SettingsScreen";
 import TestScreen from "./components/TestScreen";
 import RulesScreen from "./components/RulesScreen";
+import WelcomeScreen from "./components/WelcomeScreen";
 import { calculateResults, generateSequence } from "./utils/nback";
 
 const PHASES = {
   INTRO: "intro",
+  WELCOME: "welcome",
   RULES: "rules",
   PRACTICE_INFO: "practiceInfo",
   PRACTICE: "practice",
@@ -129,6 +131,7 @@ function computeInsights(responses) {
 
 export default function App() {
   const [phase, setPhase] = useState(PHASES.INTRO);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const [participant, setParticipant] = useState(DEFAULT_PARTICIPANT);
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
@@ -583,11 +586,23 @@ export default function App() {
       return;
     }
     setIntroError("");
-    setPhase(PHASES.RULES);
+    setPhase(PHASES.WELCOME);
+  };
+
+  const toggleTheme = () => {
+    setIsDarkMode((prev) => !prev);
   };
 
   return (
-    <main className={`app-shell phase-${phase}`}>
+    <main className={`app-shell phase-${phase} ${isDarkMode ? "theme-dark" : "theme-light"}`}>
+      <button
+        type="button"
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {isDarkMode ? "Light mode" : "Dark mode"}
+      </button>
       {phase === PHASES.INTRO && (
         <IntroScreen
           participant={participant}
@@ -602,9 +617,17 @@ export default function App() {
         />
       )}
 
+      {phase === PHASES.WELCOME && (
+        <WelcomeScreen
+          participantName={participant.name}
+          onBack={() => setPhase(PHASES.INTRO)}
+          onContinue={() => setPhase(PHASES.RULES)}
+        />
+      )}
+
       {phase === PHASES.RULES && (
         <RulesScreen
-          onBack={() => setPhase(PHASES.INTRO)}
+          onBack={() => setPhase(PHASES.WELCOME)}
           onContinue={() => setPhase(PHASES.PRACTICE_INFO)}
         />
       )}
