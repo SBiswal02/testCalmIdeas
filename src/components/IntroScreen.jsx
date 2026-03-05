@@ -1,18 +1,13 @@
 export default function IntroScreen({ participant, introError, onParticipantChange, onContinue }) {
   return (
     <section className="screen-pane screen intro-screen">
-      <h1>CalmUX Lab</h1>
-      <p className="subtitle">
-        Calm Condition N-back session. Instructions are integrated here so you can start with minimal cognitive load.
-      </p>
-
-      <ul className="rules-list compact">
-        <li>Match when the current item is the same as N trials earlier.</li>
-        <li>Use <strong>Space</strong> for Match and <strong>Enter</strong> for No Match.</li>
-        <li>Peripheral notifications may appear during the main session, but the task continues.</li>
-      </ul>
-
-      <form className="form-grid" onSubmit={onContinue}>
+      <div class = "intro-content">
+        <h1>CalmUX Lab</h1>
+        <p className="subtitle" style={{ textAlign: "center" }}>
+          Settle in, take a slow breath, and let each step unfold gently. This Calm Condition N-back session guides you
+          with clear, embedded instructions so your attention can stay steady, light, and focused.
+        </p>
+        <form className="form-grid" onSubmit={onContinue}>
         <label>
           Name
           <input
@@ -38,6 +33,7 @@ export default function IntroScreen({ participant, introError, onParticipantChan
           Continue
         </button>
       </form>
+      </div>
     </section>
   );
 }

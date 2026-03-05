@@ -12,13 +12,11 @@
 The Calm Version is a non-intrusive, peripheral-first interaction design of the N-back experiment platform.
 
 Unlike the control condition, this version:
-
 - Minimizes pop-ups  
 - Uses ambient visual cues  
 - Uses graded urgency notifications  
 - Encourages reflection  
 - Reduces cognitive interruption
-
 The task structure and scoring logic remain identical to preserve experimental validity.
 
 ---
@@ -56,9 +54,8 @@ The Calm System should:
 ---
 
 # 4. Experience Flow (Calm Condition)
-
-Intro → Rules → Trial Round → Settings → Countdown → Test → Reflective Results  
-
+Intro → Rules → Settings → Countdown → Test → Reflective Results  
+- In settings page have a option for demo run
 (Trial Round is new in Calm version.)
 
 ---
