@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-03-05T04:59:55.021Z",
+  "participant": {
+    "name": "yjf",
+    "rollNumber": "4567"
+  },
+  "settings": {
+    "nValue": 2,
+    "numTrials": 20,
+    "stimulusType": "letters",
+    "stimulusDuration": 1000,
+    "calmFeaturesEnabled": true
+  },
+  "results": {
+    "accuracy": 78,
+    "hits": 0,
+    "misses": 4,
+    "falseAlarms": 0,
+    "correctRejections": 14,
+    "reactionTime": 1000,
+    "numTrialsCompleted": 20,
+    "avgCorrectHitOrRejectionReactionTime": 1000,
+    "distractionPopupCount": "",
+    "notificationCounts": {
+      "minor": 22,
+      "visual": 0,
+      "audio": 0
+    },
+    "reflectionResponse": {
+      "focusedFeeling": "",
+      "interruptionEffect": ""
+    },
+    "practiceRoundCompleted": true,
+    "calmFeaturesEnabled": true
+  },
+  "__sourceFile": ""
+}

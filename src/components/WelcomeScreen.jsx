@@ -34,13 +34,9 @@ export default function WelcomeScreen({ participantName, onBack, onContinue }) {
         </article>
       </div>
 
-      <div className="flow-line">
-        <span />
-      </div>
-
       <div className="actions between">
         <button type="button" onClick={onBack}>
-          Back
+          Back to Intro
         </button>
         <button type="button" className="primary" onClick={onContinue}>
           Continue to rules
@@ -49,4 +45,3 @@ export default function WelcomeScreen({ participantName, onBack, onContinue }) {
     </section>
   );
 }
-

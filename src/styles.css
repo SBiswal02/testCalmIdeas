@@ -2,6 +2,12 @@
   font-family: "Source Sans 3", "Segoe UI", sans-serif;
   color: #10233b;
   background: #edf4fb;
+  --primary-color: #2d73ba;
+  --secondary-color: #6ca7dd;
+  --text-primary: #10233b;
+  --bg-primary: #fefeff;
+  --shadow-sm: 0 8px 24px rgba(15, 36, 62, 0.1);
+  --shadow-lg: 0 20px 45px rgba(15, 36, 62, 0.16);
 }
 
 * {
@@ -24,6 +30,138 @@ body {
   display: grid;
   place-items: center;
   transition: background 360ms ease, color 260ms ease;
+}
+
+/* .screen {
+  display: grid;
+  gap: 16px;
+  animation: fade-up 340ms ease;
+}
+
+.screen-pane {
+  width: min(1100px, 100%);
+  padding: clamp(18px, 3vw, 34px);
+  background: transparent;
+  transition: opacity 320ms ease;
+} */
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.app-shell.theme-dark .navbar {
+  background: rgba(10, 18, 30, 0.92);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 1rem 20px;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.app-shell.theme-dark .nav-link {
+  color: #d6e6ff;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.theme-toggle {
+  position: static;
+  z-index: auto;
+  padding-inline: 14px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+  background: transparent;
+  border: 0;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.app-shell.theme-dark .menu-toggle span {
+  background: #d6e6ff;
 }
 
 .app-shell.phase-test {
@@ -707,15 +845,6 @@ button.secondary {
   background: linear-gradient(90deg, #22c55e 0%, #38bdf8 45%, #eab308 100%);
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 30;
-  padding-inline: 14px;
-  font-size: 13px;
-}
-
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -796,4 +925,82 @@ button.secondary {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg-primary);
+    width: 100%;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    transition: left 0.3s ease;
+    gap: 1rem;
+  }
+
+  .app-shell.theme-dark .nav-menu {
+    background: #0d1727;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .stimulus-display {
+    font-size: 5rem;
+  }
+
+  .response-buttons {
+    flex-direction: column;
+  }
+
+  .btn-large {
+    width: 100%;
+  }
+
+  .test-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .test-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-layout {
+    grid-template-columns: 1fr;
+  }
+
 }

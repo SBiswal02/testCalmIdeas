@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import CountdownScreen from "./components/CountdownScreen";
 import IntroScreen from "./components/IntroScreen";
 import ResultsScreen from "./components/ResultsScreen";
+import ScreenNav from "./components/ScreenNav";
 import SettingsScreen from "./components/SettingsScreen";
 import TestScreen from "./components/TestScreen";
 import RulesScreen from "./components/RulesScreen";
@@ -19,6 +20,13 @@ const PHASES = {
   TEST: "test",
   RESULTS: "results",
 };
+
+const NAV_ITEMS = [
+  { label: "Welcome Screen", phase: PHASES.WELCOME },
+  { label: "Rules Screen", phase: PHASES.RULES },
+  { label: "Results Screen", phase: PHASES.RESULTS },
+  { label: "Test Settings", phase: PHASES.SETTINGS },
+];
 
 const RESPONSE_ADVANCE_MS = 420;
 const CALM_NOTIFICATION_MESSAGES = {
@@ -572,12 +580,26 @@ export default function App() {
       notificationCounts.minor + notificationCounts.visual + notificationCounts.audio;
   }, [notificationCounts]);
 
+  useEffect(() => {
+    if (phase !== PHASES.RESULTS || !results || saveStatus !== "idle") {
+      return;
+    }
+    submitResults(results);
+  }, [phase, results, saveStatus, submitResults]);
+
   const trialCounterLabel = useMemo(
     () => `Trial ${Math.min(currentTrial + 1, runSettings.numTrials)} / ${runSettings.numTrials}`,
     [currentTrial, runSettings.numTrials]
   );
   const totalNotifications =
     notificationCounts.minor + notificationCounts.visual + notificationCounts.audio;
+  const showNavigation = [
+    PHASES.WELCOME,
+    PHASES.RULES,
+    PHASES.PRACTICE_INFO,
+    PHASES.SETTINGS,
+    PHASES.RESULTS,
+  ].includes(phase);
 
   const handleIntroContinue = (event) => {
     event.preventDefault();
@@ -595,14 +617,15 @@ export default function App() {
 
   return (
     <main className={`app-shell phase-${phase} ${isDarkMode ? "theme-dark" : "theme-light"}`}>
-      <button
-        type="button"
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-      >
-        {isDarkMode ? "Light mode" : "Dark mode"}
-      </button>
+      <ScreenNav
+        show={showNavigation}
+        items={NAV_ITEMS}
+        activePhase={phase}
+        onNavigate={setPhase}
+        isItemDisabled={(item) => item.phase === PHASES.RESULTS && !results}
+        isDarkMode={isDarkMode}
+        onToggleTheme={toggleTheme}
+      />
       {phase === PHASES.INTRO && (
         <IntroScreen
           participant={participant}
@@ -732,7 +755,6 @@ export default function App() {
               [field]: value,
             }))
           }
-          onSave={() => submitResults(results)}
           onNewParticipant={() => {
             setParticipant(DEFAULT_PARTICIPANT);
             setSettings(DEFAULT_SETTINGS);

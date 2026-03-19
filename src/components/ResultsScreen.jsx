@@ -7,7 +7,6 @@ export default function ResultsScreen({
   saveStatus,
   reflectionResponse,
   onReflectionChange,
-  onSave,
   onNewParticipant,
   onRunAnother,
 }) {
@@ -129,11 +128,6 @@ export default function ResultsScreen({
         </button>
       </div>
 
-      <div className="actions end">
-        <button className="primary" onClick={onSave} disabled={saveStatus === "saving"}>
-          Save Session JSON
-        </button>
-      </div>
     </section>
   );
 }
